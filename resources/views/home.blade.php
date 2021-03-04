@@ -20,6 +20,7 @@
                     @can('admin_access')
                         <a href="/users" class="btn btn-primary">Manage User</a>
                     @endcan
+                    <a href="/posts" class="btn btn-primary">Post</a>
                 </div>
             </div>
         </div>

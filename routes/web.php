@@ -29,3 +29,9 @@ Route::middleware('user_role:admin')->group(function () {
 
     Route::resource('/users', UserController::class);
 });
+
+
+use App\Http\Controllers\PostController;
+
+Route::get('posts', [PostController::class, 'index']);
+Route::get('posts/{id}', [PostController::class, 'show']);
