@@ -16,7 +16,10 @@
 
                     {{ __('You are logged in!') }}
                     <hr>
-                    <a href="/users" class="btn btn-primary">Manage User</a>
+                    
+                    @can('admin_access')
+                        <a href="/users" class="btn btn-primary">Manage User</a>
+                    @endcan
                 </div>
             </div>
         </div>
