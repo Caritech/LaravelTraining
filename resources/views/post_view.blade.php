@@ -23,6 +23,7 @@
                                 <td>Title</td>
                                 <td>Comment Count</td>
                                 <td>Like Count</td>
+                                <td>By</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,7 +32,6 @@
                                 $total_comment = 0;
                             ?>
                             @foreach($posts as $post)
-       
                                 <tr>
                                     <td>
                                         <a href="/posts/{{$post->id}}" class="btn btn-primary">View</a>
@@ -40,6 +40,9 @@
                                     <td>{{$post->title}}</td>
                                     <td>{{$post->comment()->count()}}</td>
                                     <td>{{$post->like()->count()}}</td>
+                                    <td>
+                                        {{$post->user->name}}
+                                    </td>
                                 </tr>
                                 <?php
                                     $total_like += $post->like()->count();

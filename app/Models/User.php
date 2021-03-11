@@ -57,4 +57,9 @@ class User extends Authenticatable
         $rule['password'] = 'nullable|confirmed';
         return $rule;
     }
+
+    public function post()
+    {
+        return $this->hasMany(\App\Models\Post::class, 'user_id', 'id');
+    }
 }

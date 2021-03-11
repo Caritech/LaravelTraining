@@ -32,4 +32,9 @@ class Post extends Model
     {
         return $this->hasMany('App\Models\Like', 'post_id', 'id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
+    }
 }
